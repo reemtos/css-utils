@@ -1,0 +1,72 @@
+/*
+ * Tosin's Base CSS.
+ * Contains browser resets and base styles,
+ * as needed and used at all times.
+*/
+ 
+/*
+ * Remove margin and padding on ALL elements
+ * and set box-sizing to inherit from root.
+*/
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Set box-sizing and root font-size.
+*/
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+/*
+ * Set base style for typography and links.
+*/
+body {
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+
+* {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+a,
+a:visited {
+  color: inherit;
+}
+
+/*
+ * Set correct display on HTML5 elements.
+*/
+article,
+aside,
+footer,
+header,
+nav,
+section,
+main {
+  display: block;
+}
+
+/*
+ * Set base style for attributes & states.
+*/
+[hidden] {
+  display: none !important;
+}
+
+[disabled] {
+  cursor: not-allowed;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
