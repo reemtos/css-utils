@@ -1,0 +1,74 @@
+/*
+ * My Personal SASS MIXINS.
+ * Contains a list of mixins as frequently used in
+ * my SASS-dependent projects. To use any of them,
+ * all that is required is to include them in any SASS file.
+ * That is: @include mixinName;
+ * Or for mixins that are functions and expect parameters:
+ * @include mixinName(parameter) { new-sass-code-here }
+*/
+ 
+
+/*
+ * Align an element vertically and horizontally
+ * to the center, that is, on X and Y axis.
+ * P.s. To use, the element that must be centered 
+ * MUST have its parent element's position set to relative.
+*/
+@mixin alignCenterXY {
+    & {
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/*
+ * To apply clearfix to an element.
+*/
+@mixin clearfix {
+    &::after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+}
+
+/*
+ * Responsive breakpoints for media queries.
+ * Functions the same way functions work. Expects
+ * desired breakpoints as parameters.
+*/
+@mixin respond($breakpoint) {
+    @if($breakpoint==smaller) {
+        @media only screen and (max-width: 31.25em) {
+            @content
+        }
+        ; // 500px
+    }
+    @if($breakpoint==small) {
+        @media only screen and (max-width: 37.5em) {
+            @content
+        }
+        ; // 600px
+    }
+    @if($breakpoint==medium) {
+        @media only screen and (max-width: 46.875em) {
+            @content
+        }
+        ; // 750px
+    }
+    @if($breakpoint==large) {
+        @media only screen and (max-width: 56.25em) {
+            @content
+        }
+        ; // 900px
+    }
+    @if($breakpoint==largest) {
+        @media only screen and (max-width: 62.5em) {
+            @content
+        }
+        ; // 1000px
+    }
+}
